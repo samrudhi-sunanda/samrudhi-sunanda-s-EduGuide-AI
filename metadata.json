@@ -1,0 +1,6 @@
+{
+  "name": "EduGuide AI",
+  "description": "A Rule-Based Expert System for Personalized Student Academic Planning with Forward Chaining Inference, Subject Prioritization, and Explainable AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
