@@ -56,8 +56,8 @@ async function startServer() {
       if (mode === 'fast') {
         model = 'gemini-3.1-flash-lite';
       } else if (mode === 'thinking') {
-        // High reasoning mode for complex academic strategies & viva questions
-        model = 'gemini-3.8-flash';
+        // High reasoning mode for complex academic strategies & viva questions (gemini-4-argon with ThinkingLevel.HIGH)
+        model = 'gemini-4-argon';
         thinkingConfig = { thinkingLevel: ThinkingLevel.HIGH };
       }
 
