@@ -27,13 +27,13 @@ export interface DeveloperInfo {
 }
 
 export const DEFAULT_DEVELOPER_INFO: DeveloperInfo = {
-  developerName: 'Student Developer',
-  developerRoll: 'BE-CS-042',
-  coDeveloperName: 'Co-Developer Partner',
-  coDeveloperRoll: 'BE-CS-043',
+  developerName: 'Samruddhi S & Jay K',
+  developerRoll: 'BE-CS-041 & BE-CS-042',
+  coDeveloperName: 'Pratiksha K & Akanksha G',
+  coDeveloperRoll: 'BE-CS-043 & BE-CS-044',
   department: 'Department of Computer Engineering',
   collegeName: 'College of Engineering & Technology',
-  academicYear: '2025 - 2026',
+  academicYear: 'Third Year (TE) 2025 - 2026',
   guideProfessor: 'Prof. Artificial Intelligence & Expert Systems',
 };
 
