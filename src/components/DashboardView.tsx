@@ -104,32 +104,32 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 border border-indigo-900/40 shadow-xl">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50/90 via-white to-blue-50/50 dark:bg-gradient-to-r dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 text-slate-900 dark:text-white p-6 sm:p-8 border border-indigo-100 dark:border-indigo-900/40 shadow-xs">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-semibold mb-3">
-            <Brain className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100/80 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-500/30 text-xs font-semibold mb-3">
+            <Brain className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
             <span>Forward-Chaining Expert System Active</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-2">
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-2 text-slate-900 dark:text-white">
             Welcome back, {profile.name}! 👋
           </h2>
-          <p className="text-slate-300 text-sm leading-relaxed mb-4">
+          <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
             {profile.course} • {profile.academicYear} ({profile.semester}). Daily study allocation is set to{' '}
-            <strong className="text-white font-semibold">{profile.availableHoursPerDay} hours/day</strong> in the{' '}
-            <strong className="text-white font-semibold">{profile.preferredTimeSlot}</strong> window.
+            <strong className="text-slate-900 dark:text-white font-semibold">{profile.availableHoursPerDay} hours/day</strong> in the{' '}
+            <strong className="text-slate-900 dark:text-white font-semibold">{profile.preferredTimeSlot}</strong> window.
           </p>
 
           {/* Quick Goals pill */}
           {profile.personalGoals && (
-            <div className="flex items-center gap-2 text-xs text-indigo-200/90 bg-indigo-900/30 px-3.5 py-2 rounded-xl border border-indigo-800/40">
-              <Target className="w-4 h-4 text-indigo-400 shrink-0" />
+            <div className="flex items-center gap-2 text-xs text-indigo-900 dark:text-indigo-200/90 bg-indigo-50/90 dark:bg-indigo-900/30 px-3.5 py-2 rounded-xl border border-indigo-200/80 dark:border-indigo-800/40">
+              <Target className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
               <span>Goal: {profile.personalGoals}</span>
             </div>
           )}
         </div>
 
         {/* Decorative corner glow */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-indigo-500/10 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-indigo-100/50 dark:from-indigo-500/10 to-transparent pointer-events-none" />
       </div>
 
       {/* Recommended Next Action Banner (Derived directly from Rule-Based Inference) */}
