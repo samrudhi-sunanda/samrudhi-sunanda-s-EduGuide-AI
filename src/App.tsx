@@ -46,13 +46,13 @@ import {
 } from './expert-system/storage.ts';
 
 export default function App() {
-  // Theme state: defaults to clean light and professional theme
+  // Theme state: strictly defaults to clean light theme
   const [isDark, setIsDark] = useState<boolean>(() => {
     try {
-      const saved = localStorage.getItem('eduguide_theme_mode');
-      // If user explicitly switched to dark before, respect it only if set in active session,
-      // but ensure light mode is the primary professional default
-      if (saved === 'dark') return false; // Reset to light to honor explicit user request
+      localStorage.setItem('eduguide_theme_mode', 'light');
+      if (typeof document !== 'undefined') {
+        document.documentElement.classList.remove('dark');
+      }
       return false;
     } catch {
       return false;
