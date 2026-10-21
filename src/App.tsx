@@ -19,6 +19,7 @@ import { RuleExplorerView } from './components/RuleExplorerView.tsx';
 import { LearningCenterView } from './components/LearningCenterView.tsx';
 import { GeminiMentorView } from './components/GeminiMentorView.tsx';
 import { AboutProjectView } from './components/AboutProjectView.tsx';
+import { ModelTrainingView } from './components/ModelTrainingView.tsx';
 
 import type {
   StudentProfile,
@@ -343,6 +344,10 @@ export default function App() {
               subjects={profile?.subjects || []}
               exams={exams}
             />
+          )}
+
+          {activeTab === 'ml-trainer' && (
+            <ModelTrainingView profile={profile} />
           )}
 
           {activeTab === 'explainable-ai' && (

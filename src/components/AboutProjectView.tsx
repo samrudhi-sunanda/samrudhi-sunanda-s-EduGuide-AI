@@ -81,9 +81,9 @@ export const AboutProjectView: React.FC<AboutProjectViewProps> = ({
         'Developed zero-overlapping weekly timetable generator with circadian time slot templates.',
         'Implemented dynamic difficulty time rebalancing (+25% time for Difficult, compression for Easy).',
         'Built full-stack Express server API with Gemini AI Academic Mentor thinking mode proxy.',
-        'Architected LocalStorage persistence engine with demo seeds and state reset handlers.',
+        'Engineered UCI Machine Learning Training Studio with Gradient Descent & Neural Network Backpropagation.',
       ],
-      keyModules: ['Study Planner', 'Slot Generator', 'Difficulty Rebalancing', 'Express Backend', 'State Persistence'],
+      keyModules: ['Study Planner', 'Slot Generator', 'UCI ML Training', 'Express Backend', 'State Persistence'],
     },
     {
       id: 'pratiksha-k',

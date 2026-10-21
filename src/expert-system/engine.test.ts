@@ -205,3 +205,51 @@ test('Study Planner: rescheduleMissedTasks adapts incomplete tasks into weekend 
   assert.match(target?.topic || '', /Rescheduled/i, 'Task topic should indicate rescheduled status');
   assert.equal(target?.dayName, 'Sunday', 'Missed task during week should be rescheduled to buffer day');
 });
+
+test('UCI ML Model: trains Linear Regression via Gradient Descent on student-mat.csv dataset', async () => {
+  const { getUciBenchmarkDataset } = await import('../ml-model/uci-dataset.ts');
+  const { trainUciStudentModel } = await import('../ml-model/uci-trainer.ts');
+
+  const mathData = getUciBenchmarkDataset('Math');
+  assert.equal(mathData.length, 395, 'Math cohort should have 395 instances');
+
+  const model = trainUciStudentModel(mathData, {
+    modelType: 'linear_regression',
+    learningRate: 0.08,
+    epochs: 50,
+    trainSplitRatio: 0.8,
+  });
+
+  assert.ok(model.metrics.testR2 > 0.7, 'Test R^2 score should exceed 0.70');
+  assert.ok(model.metrics.testMae < 3.5, 'Test MAE should be under 3.5 marks');
+
+  // Test prediction on high-performing student
+  const highInputs = [1, 0, 16 / 20, 17 / 20, 0, 1, 1, 1, 0, 1];
+  const highPred = model.predictG3(highInputs);
+  assert.ok(highPred.predictedGrade >= 12, 'High performer should have predicted grade >= 12');
+  assert.equal(highPred.isAtRisk, false, 'High performer should not be at risk');
+
+  // Test prediction on struggling student with failures
+  const lowInputs = [0, 1, 6 / 20, 6 / 20, 0.6, 0.2, 0, 0, 0.5, 0.5];
+  const lowPred = model.predictG3(lowInputs);
+  assert.ok(lowPred.predictedGrade < 11, 'Struggling student should have low predicted grade');
+});
+
+test('UCI ML Model: trains Neural Network with Backpropagation on student-por.csv dataset', async () => {
+  const { getUciBenchmarkDataset } = await import('../ml-model/uci-dataset.ts');
+  const { trainUciStudentModel } = await import('../ml-model/uci-trainer.ts');
+
+  const porData = getUciBenchmarkDataset('Portuguese');
+  assert.equal(porData.length, 649, 'Portuguese cohort should have 649 instances');
+
+  const model = trainUciStudentModel(porData, {
+    modelType: 'neural_network',
+    learningRate: 0.06,
+    epochs: 40,
+    trainSplitRatio: 0.8,
+  });
+
+  assert.ok(model.history.length === 40, 'History should log all 40 epochs');
+  assert.ok(model.metrics.testMse > 0, 'Test MSE must be positive');
+  assert.ok(typeof model.predictG3 === 'function', 'Model must export predictG3 function');
+});

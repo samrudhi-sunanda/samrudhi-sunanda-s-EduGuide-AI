@@ -16,6 +16,7 @@ import {
   Sun,
   Moon,
   RotateCcw,
+  BrainCircuit,
 } from 'lucide-react';
 
 export type ActiveTab =
@@ -26,6 +27,7 @@ export type ActiveTab =
   | 'exams'
   | 'tracker'
   | 'performance'
+  | 'ml-trainer'
   | 'explainable-ai'
   | 'forward-chaining'
   | 'rule-explorer'
@@ -60,6 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'exams' as ActiveTab, label: 'Exam Advisor', icon: AlarmClockCheck, badge: '' },
     { id: 'tracker' as ActiveTab, label: 'Study Timer & Log', icon: Timer, badge: 'Pomodoro' },
     { id: 'performance' as ActiveTab, label: 'Performance', icon: BarChart3, badge: '' },
+    { id: 'ml-trainer' as ActiveTab, label: 'ML Model Training', icon: BrainCircuit, badge: 'UCI Data' },
     { id: 'explainable-ai' as ActiveTab, label: 'Explainable AI (XAI)', icon: HelpCircle, badge: 'Rules' },
     { id: 'forward-chaining' as ActiveTab, label: 'Forward Chaining Demo', icon: GitFork, badge: 'Viva Demo' },
     { id: 'rule-explorer' as ActiveTab, label: 'Rule Explorer', icon: BookOpenCheck, badge: '18 Rules' },

@@ -30,6 +30,7 @@ const TAB_TITLES: Record<ActiveTab, { title: string; subtitle: string }> = {
   exams: { title: 'Examination Preparation Advisor', subtitle: 'Countdown timers, stage-specific strategies & high-yield revision protocols' },
   tracker: { title: 'Study Progress Tracker & Timer', subtitle: 'Pomodoro / stopwatch session logger with subject-wise analytics' },
   performance: { title: 'Academic Performance Analytics', subtitle: 'Recorded study hours, task completion metrics & syllabus tracking' },
+  'ml-trainer': { title: 'UCI Machine Learning Model Training', subtitle: 'Supervised Gradient Descent & Neural Network trained on student-mat.csv & student-por.csv' },
   'explainable-ai': { title: 'Explainable AI (XAI) Panel', subtitle: 'Inspect working memory facts, fired rule IDs & natural deduction chains' },
   'forward-chaining': { title: 'Forward-Chaining Simulator', subtitle: 'Interactive 5-step expert system demonstration for college viva presentations' },
   'rule-explorer': { title: 'Knowledge Base Rule Explorer', subtitle: 'Searchable production rules catalog & real-time scenario sandbox' },
